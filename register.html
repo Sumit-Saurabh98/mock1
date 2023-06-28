@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="register.html">Registration</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="vaccinated.html">Vaccinated</a></li>
+        </ul>
+      </nav>
+
+  <h1>Registration</h1>
+
+  <form id="registrationForm">
+    <div>
+      <label for="uniqueId">Unique ID:</label>
+      <input type="text" id="uniqueId" required>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required minlength="4">
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required min="18" max="40">
+    </div>
+    <div>
+      <label for="designation">Designation:</label>
+      <label><input type="radio" name="designation" value="Employee" required> Employee</label>
+      <label><input type="radio" name="designation" value="Student" required> Student</label>
+    </div>
+    <div>
+      <label for="priority">Priority:</label>
+      <select id="priority" required>
+        <option value="p0">p0</option>
+        <option value="p1">p1</option>
+        <option value="p2">p2</option>
+        <option value="p3">p3</option>
+      </select>
+    </div>
+    <div>
+      <label for="vaccine">Vaccine:</label>
+      <select id="vaccine" required>
+        <option value="Covishield">Covishield</option>
+        <option value="Covaxin">Covaxin</option>
+        <option value="Sputnik">Sputnik</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard Page</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="register.html">Registration</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="vaccinated.html">Vaccinated</a></li>
+        </ul>
+      </nav>
+
+  <h1>Dashboard</h1>
+
+  <div class="filters">
+    <label for="vaccineFilter">Filter by Vaccine:</label>
+    <select id="vaccineFilter">
+      <option value="">All</option>
+      <option value="Covishield">Covishield</option>
+      <option value="Covaxin">Covaxin</option>
+      <option value="Sputnik">Sputnik</option>
+    </select>
+
+    <label for="sortAge">Sort by Age:</label>
+    <select id="sortAge">
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+
+    <label for="priorityFilter">Filter by Priority:</label>
+    <select id="priorityFilter">
+      <option value="">All</option>
+      <option value="p0">p0</option>
+      <option value="p1">p1</option>
+      <option value="p2">p2</option>
+      <option value="p3">p3</option>
+    </select>
+  </div>
+
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Unique ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Designation</th>
+        <th>Priority</th>
+        <th>Vaccine</th>
+        <th>OTP</th>
+        <th>Delete</th>
+        <th>Vaccinate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows for user data -->
+    </tbody>
+  </table>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
