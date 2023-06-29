@@ -9,16 +9,12 @@ function deleteUser(uniqueId) {
   }
 }
 
-function generateOTP() {
-  return Math.floor(1000 + Math.random() * 9000);
-}
 
 function vaccinateUser(uniqueId) {
   const userData = JSON.parse(localStorage.getItem(uniqueId));
-  const otp = generateOTP();
-  userData.otp = otp;
-
-  Promise.resolve()
+  var enteredOtp = prompt("Enter otp:")
+  if(enteredOtp==userData.otp){
+    Promise.resolve()
     .then(() => {
       alert(`${userData.name} Added to Queue`);
       return new Promise(resolve => setTimeout(resolve, 5000));
@@ -41,6 +37,9 @@ function vaccinateUser(uniqueId) {
         row.remove();
       }
     });
+  }else{
+alert("wrong otp")
+  }
 }
 
 for (let i = 0; i < localStorage.length; i++) {
@@ -68,7 +67,7 @@ for (let i = 0; i < localStorage.length; i++) {
   const vacCell = document.createElement('td');
   vacCell.textContent = userData.vaccine;
   const otpCell = document.createElement('td');
-    otpCell.textContent = generateOTP();
+    otpCell.textContent = userData.otp;
   const deleteCell = document.createElement('td');
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';
@@ -82,8 +81,7 @@ for (let i = 0; i < localStorage.length; i++) {
   vaccinateButton.textContent = 'Vaccinate';
   vaccinateButton.classList.add('vaccinate-button');
   vaccinateButton.addEventListener('click', function() {
-    vaccinateUser(uniqueId);
-    prompt("otp")
+    vaccinateUser(uniqueId);  
   });
   vaccinateCell.appendChild(vaccinateButton);
 

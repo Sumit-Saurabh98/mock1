@@ -28,6 +28,8 @@ function registerUser(event) {
     return;
   }
 
+  const otp = generateOTP()
+
 
   const user = {
     uniqueId,
@@ -35,7 +37,8 @@ function registerUser(event) {
     age,
     designation,
     priority,
-    vaccine
+    vaccine,
+    otp
   };
 
 
@@ -60,6 +63,10 @@ function isValidName(name) {
 
 function isValidAge(age) {
   return age >= 18 && age <= 40;
+}
+
+function generateOTP() {
+  return Math.floor(1000 + Math.random() * 9000);
 }
 
 
